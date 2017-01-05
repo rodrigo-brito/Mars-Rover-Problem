@@ -2,10 +2,10 @@ package net.rodrigobrito.marsrovers.model;
 
 public class Rover {
 	private Direction direction;
-	private Coordinates coordinates;
+	private Coordinate coordinate;
 	
-	public Rover(Coordinates coordinates, Direction direction){
-		this.coordinates = coordinates;
+	public Rover(Coordinate coordinates, Direction direction){
+		this.coordinate = coordinates;
 		this.direction = direction;
 	}
 	
@@ -17,12 +17,12 @@ public class Rover {
 		this.direction = direction;
 	}
 	
-	public Coordinates getCoordinates() {
-		return coordinates;
+	public Coordinate getCoordinates() {
+		return coordinate;
 	}
 	
-	public void setCoordinates(Coordinates coordinates) {
-		this.coordinates = coordinates;
+	public void setCoordinates(Coordinate coordinates) {
+		this.coordinate = coordinates;
 	}
 	
 	/**
@@ -45,16 +45,16 @@ public class Rover {
 	public void move(){
 		switch( this.direction ){
 			case N:
-				coordinates.setY( coordinates.getY() + 1 );
+				coordinate.setY( coordinate.getY() + 1 );
 				break;
 			case S:
-				coordinates.setY( coordinates.getY() - 1 );
+				coordinate.setY( coordinate.getY() - 1 );
 				break;
 			case E:
-				coordinates.setX( coordinates.getX() + 1 );
+				coordinate.setX( coordinate.getX() + 1 );
 				break;
 			case W:
-				coordinates.setX( coordinates.getX() - 1 );
+				coordinate.setX( coordinate.getX() - 1 );
 		}
 	}
 	
@@ -79,6 +79,6 @@ public class Rover {
 	
 	@Override
 	public String toString(){
-		return this.coordinates + " " + this.direction;
+		return this.coordinate + " " + this.direction;
 	}
 }
